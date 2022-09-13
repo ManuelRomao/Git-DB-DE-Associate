@@ -90,6 +90,10 @@ DESCRIBE SCHEMA EXTENDED ${da.db_name}_default_location;
 
 -- COMMAND ----------
 
+DESCRIBE SCHEMA ${da.db_name}_default_location;
+
+-- COMMAND ----------
+
 -- MAGIC %md <i18n value="58292139-abd2-453b-b327-9ec2ab76dd0a"/>
 -- MAGIC 
 -- MAGIC 

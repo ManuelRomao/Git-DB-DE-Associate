@@ -106,8 +106,9 @@
 
 # COMMAND ----------
 
-assert my_name is not None, "Name is still None"
-print(my_name)
+# MAGIC %python
+# MAGIC assert my_name is not None, "Name is still None"
+# MAGIC print(my_name)
 
 # COMMAND ----------
 
@@ -121,7 +122,8 @@ print(my_name)
 
 # COMMAND ----------
 
-display(example_df)
+# MAGIC %python
+# MAGIC display(example_df)
 
 # COMMAND ----------
 
@@ -150,6 +152,13 @@ display(example_df)
 
 # COMMAND ----------
 
+# MAGIC %md 
+# MAGIC #Header For ya
+# MAGIC  - Follow the link
+# MAGIC  - [My link]("https://github.com/ManuelRomao/Git-DB-DE-Associate/")
+
+# COMMAND ----------
+
 # MAGIC %md <i18n value="a54470bc-2a69-4a34-acbb-fe28c4dee284"/>
 # MAGIC 
 # MAGIC 
@@ -173,8 +182,9 @@ display(example_df)
 
 # COMMAND ----------
 
-files = dbutils.fs.ls(f"{DA.paths.datasets}/nyctaxi-with-zipcodes/data")
-display(files)
+# MAGIC %python
+# MAGIC files = dbutils.fs.ls(f"{DA.paths.datasets}/nyctaxi-with-zipcodes/data")
+# MAGIC display(files)
 
 # COMMAND ----------
 
@@ -191,7 +201,8 @@ display(files)
 
 # COMMAND ----------
 
-print(my_name)
+# MAGIC %python
+# MAGIC print(my_name)
 
 # COMMAND ----------
 

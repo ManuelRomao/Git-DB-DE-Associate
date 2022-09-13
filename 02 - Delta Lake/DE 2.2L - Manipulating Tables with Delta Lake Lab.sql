@@ -62,8 +62,12 @@
 
 -- COMMAND ----------
 
--- TODO
-<FILL-IN>
+create table if not exists beans(
+name string
+, color string
+,grams float
+,delicious boolean
+)
 
 -- COMMAND ----------
 
@@ -106,8 +110,8 @@ INSERT INTO beans VALUES
 
 -- COMMAND ----------
 
--- TODO
-<FILL-IN>
+-- MAGIC %python
+-- MAGIC spark.table("beans").display()
 
 -- COMMAND ----------
 
@@ -120,7 +124,7 @@ INSERT INTO beans VALUES
 -- COMMAND ----------
 
 -- TODO
-<FILL-IN>
+insert into beans values
 ('pinto', 'brown', 1.5, true),
 ('green', 'green', 178.3, true),
 ('beanbag chair', 'white', 40000, false)
@@ -170,8 +174,14 @@ WHERE name = "jelly"
 
 -- COMMAND ----------
 
--- TODO
-<FILL-IN>
+-- MAGIC %python
+-- MAGIC spark.table("beans").display()
+
+-- COMMAND ----------
+
+update beans
+set grams = 1500
+where name = "pinto"
 
 -- COMMAND ----------
 
@@ -205,7 +215,8 @@ WHERE name = "jelly"
 -- COMMAND ----------
 
 -- TODO
-<FILL-IN>
+delete from beans 
+where delicious = FALSE
 
 -- COMMAND ----------
 
@@ -257,7 +268,13 @@ SELECT * FROM new_beans
 -- COMMAND ----------
 
 -- TODO
-<FILL-IN>
+MERGE into beans o
+USING new_beans n
+ON o.name = n.name and o.color = n.color
+WHEN MATCHED 
+   THEN update set grams = n.grams + o.grams
+WHEN NOT MATCHED and delicious = TRUE
+   THEN insert *;
 
 -- COMMAND ----------
 
@@ -296,7 +313,7 @@ SELECT * FROM new_beans
 -- COMMAND ----------
 
 -- TODO
-<FILL-IN>
+drop table beans
 
 -- COMMAND ----------
 

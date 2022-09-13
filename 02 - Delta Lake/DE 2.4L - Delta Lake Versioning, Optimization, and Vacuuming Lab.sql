@@ -105,7 +105,7 @@ WHEN NOT MATCHED AND b.delicious = true THEN
 -- COMMAND ----------
 
 -- TODO
-<FILL-IN>
+describe history beans
 
 -- COMMAND ----------
 
@@ -171,7 +171,8 @@ SELECT * FROM beans
 
 -- TODO
 CREATE OR REPLACE TEMP VIEW pre_delete_vw AS
-<FILL-IN>
+select * from beans version as of 4;
+select * from pre_delete_vw;
 
 -- COMMAND ----------
 
@@ -205,7 +206,7 @@ SELECT * FROM pre_delete_vw
 -- COMMAND ----------
 
 -- TODO
-<FILL-IN>
+restore table beans to version as of 5
 
 -- COMMAND ----------
 
@@ -239,8 +240,14 @@ DESCRIBE HISTORY beans
 
 -- COMMAND ----------
 
+-- mr
+DESCRIBE DETAIL beans
+
+-- COMMAND ----------
+
 -- TODO
-<FILL-IN>
+optimize beans
+  zorder by name
 
 -- COMMAND ----------
 
@@ -252,6 +259,10 @@ DESCRIBE HISTORY beans
 -- COMMAND ----------
 
 DESCRIBE DETAIL beans
+
+-- COMMAND ----------
+
+describe history beans
 
 -- COMMAND ----------
 
@@ -319,6 +330,15 @@ VACUUM beans RETAIN 0 HOURS
 
 -- COMMAND ----------
 
+describe history beans;
+
+-- COMMAND ----------
+
+restore table beans to version as of 10;
+select * from beans;
+
+-- COMMAND ----------
+
 -- MAGIC %md <i18n value="21bb3d2d-5c7b-4e49-ad16-b27eeecbd915"/>
 -- MAGIC 
 -- MAGIC 
@@ -364,7 +384,7 @@ SELECT * FROM beans
 
 -- COMMAND ----------
 
--- SELECT * FROM beans@v1
+SELECT * FROM beans@v1
 
 -- COMMAND ----------
 

@@ -223,8 +223,16 @@ DESCRIBE DETAIL students
 
 -- COMMAND ----------
 
+select * from students
+
+-- COMMAND ----------
+
 OPTIMIZE students
 ZORDER BY id
+
+-- COMMAND ----------
+
+select * from students
 
 -- COMMAND ----------
 
@@ -332,7 +340,7 @@ RESTORE TABLE students TO VERSION AS OF 8
 
 -- COMMAND ----------
 
--- VACUUM students RETAIN 0 HOURS
+ VACUUM students RETAIN 0 HOURS
 
 -- COMMAND ----------
 

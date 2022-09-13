@@ -58,7 +58,7 @@
 
 -- COMMAND ----------
 
-CREATE TABLE students
+CREATE TABLE IF NOT EXISTS students
   (id INT, name STRING, value DOUBLE);
 
 -- COMMAND ----------
